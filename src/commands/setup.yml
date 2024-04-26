@@ -1,0 +1,19 @@
+description: >
+  This command echos "Hello World" using file inclusion.
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+parameters:
+  variable:
+    type: env_var_name
+    description: The environment variable
+  prefix:
+    type: string
+    description: The prefix you are using
+    default: "UNMASKABLE:"
+steps:
+  - run:
+      environment:
+        PARAM_VARIABLE: <<parameters.variable>>
+        PARAM_PREFIX: <<parameters.prefix>>
+      name: Unmasking <<parameters.variable>>
+      command: <<include(scripts/setup.sh)>>
