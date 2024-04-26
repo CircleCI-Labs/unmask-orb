@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # This example uses envsubst to support variable substitution in the string parameter type.
 # https://circleci.com/docs/orbs-best-practices/#accepting-parameters-as-strings-or-environment-variables
