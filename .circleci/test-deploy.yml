@@ -63,7 +63,7 @@ workflows:
       
       - hold-for-review:
           type: approval
-          filters: *filters
+          filters: *release-filters
           requires:
             - unmask-linux
             - unmask-windows
