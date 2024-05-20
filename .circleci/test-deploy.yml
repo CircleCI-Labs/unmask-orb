@@ -39,8 +39,10 @@ jobs:
       - test
     
   unmask-windows:
-    executor: win/default
+    machine:
+      image: windows-server-2019-vs2019:current
     shell: bash.exe
+    resource_class: windows.medium
     steps:
       - test
 
