@@ -40,6 +40,7 @@ jobs:
     
   unmask-windows:
     executor: win/default
+    shell: bash.exe
     steps:
       - test
 
