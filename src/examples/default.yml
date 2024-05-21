@@ -1,0 +1,21 @@
+description: >
+  This example demonstrates how the `setup` command can be used to setup an
+  environment variable to be printed. This assumes the environment variable is called YOUR_VAR_NAME and it
+  is configured with the prefix "UNMASKABLE:" e.g (UNMASKABLE:MY_SECRET). See the `custom-prefix` example for info on how to customise this.
+usage:
+  version: 2.1
+  orbs:
+    unmask: cci-labs/unmask@0.1.0
+  jobs:
+    example:
+      docker:
+        - image: cimg/base:edge
+      steps:
+        - run: echo $YOUR_VAR_NAME
+        - unmask/setup:
+            variable: YOUR_VAR_NAME
+        - run: echo $YOUR_VAR_NAME
+  workflows:
+    use-my-orb:
+      jobs:
+        - example
