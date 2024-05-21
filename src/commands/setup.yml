@@ -1,7 +1,5 @@
 description: >
-  This command echos "Hello World" using file inclusion.
-# What will this command do?
-# Descriptions should be short, simple, and clear.
+  This command prepares an environment variable that you wish to be viewable in step output.
 parameters:
   variable:
     type: env_var_name
