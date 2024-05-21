@@ -1,5 +1,4 @@
-# Orb Template
-
+# Unmask orb
 
 [![CircleCI Build Status](https://circleci.com/gh/circleci-labs/unmask-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/circleci-labs/unmask-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/circleci-labs/unmask.svg)](https://circleci.com/developer/orbs/orb/circleci-labs/unmask) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/circleci-labs/unmask-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
@@ -47,9 +46,11 @@ workflows:
 
 ## Resources
 
-[CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/circleci-labs/unmask) - The official registry page of this orb for all versions, executors, commands, and jobs described.
-
-[CircleCI Orb Docs](https://circleci.com/docs/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
+- [CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/circleci-labs/unmask) - The official registry page of this orb for all versions, executors, commands, and jobs described.
+- [CircleCI Orb Docs](https://circleci.com/docs/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
+ - [Orb Author Intro](https://circleci.com/docs/2.0/orb-author-intro/#section=configuration)
+ - [Reusable Configuration](https://circleci.com/docs/2.0/reusing-config)
+ - [Secret Masking](https://circleci.com/docs/env-vars/#secrets-masking)
 
 ### How to Contribute
 
