@@ -1,6 +1,6 @@
 # Unmask orb
 
-[![CircleCI Build Status](https://circleci.com/gh/circleci-labs/unmask-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/circleci-labs/unmask-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/circleci-labs/unmask.svg)](https://circleci.com/developer/orbs/orb/circleci-labs/unmask) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/circleci-labs/unmask-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
+[![CircleCI Build Status](https://circleci.com/gh/circleci-labs/unmask-orb.svg?style=shield "CircleCI Build Status")](https://circleci.com/gh/circleci-labs/unmask-orb) [![CircleCI Orb Version](https://badges.circleci.com/orbs/cci-labs/unmask.svg)](https://circleci.com/developer/orbs/orb/cci-labs/unmask) [![GitHub License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://raw.githubusercontent.com/circleci-labs/unmask-orb/master/LICENSE) [![CircleCI Community](https://img.shields.io/badge/community-CircleCI%20Discuss-343434.svg)](https://discuss.circleci.com/c/ecosystem/orbs)
 
 CircleCI masks the contents of user-defined environment variables when printed as output. This conveniently helps reduce the impact of accidentally printing secrets. However, in some instances, it may be desirable to print the raw contents of a variable.
 
@@ -25,7 +25,7 @@ CircleCI Labs, including this repo, is a collection of solutions developed by me
 version: 2.1
 
 orbs:
-  unmask: circleci-labs/unmask@0.1.0
+  unmask: cci-labs/unmask@0.1.0
 
 jobs:
   # If a project env var called MY_VAR is configured as "UNMASKABLE:FOO"
@@ -46,7 +46,7 @@ workflows:
 
 ## Resources
 
-- [CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/circleci-labs/unmask) - The official registry page of this orb for all versions, executors, commands, and jobs described.
+- [CircleCI Orb Registry Page](https://circleci.com/developer/orbs/orb/cci-labs/unmask) - The official registry page of this orb for all versions, executors, commands, and jobs described.
 - [CircleCI Orb Docs](https://circleci.com/docs/orb-intro/#section=configuration) - Docs for using, creating, and publishing CircleCI Orbs.
  - [Orb Author Intro](https://circleci.com/docs/2.0/orb-author-intro/#section=configuration)
  - [Reusable Configuration](https://circleci.com/docs/2.0/reusing-config)
@@ -60,7 +60,7 @@ We welcome [issues](https://github.com/circleci-labs/unmask-orb/issues) to and [
 1. Merge pull requests with desired changes to the main branch.
     - For the best experience, squash-and-merge and use [Conventional Commit Messages](https://conventionalcommits.org/).
 2. Find the current version of the orb.
-    - You can run `circleci orb info circleci-labs/unmask | grep "Latest"` to see the current version.
+    - You can run `circleci orb info cci-labs/unmask | grep "Latest"` to see the current version.
 3. Create a [new Release](https://github.com/circleci-labs/unmask-orb/releases/new) on GitHub.
     - Click "Choose a tag" and _create_ a new [semantically versioned](http://semver.org/) tag. (ex: v1.0.0)
       - We will have an opportunity to change this before we publish if needed after the next step.
