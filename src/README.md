@@ -1,26 +1,47 @@
-# Orb Source
+# Unmask Orb
 
-Orbs are shipped as individual `orb.yml` files, however, to make development easier, it is possible to author an orb in _unpacked_ form, which can be _packed_ with the CircleCI CLI and published.
+CircleCI masks the contents of user-defined environment variables when printed as output. This conveniently helps reduce the impact of accidentally printing secrets. However, in some instances, it may be desirable to print the raw contents of a variable.
 
-The default `.circleci/config.yml` file contains the configuration code needed to automatically pack, test, and deploy any changes made to the contents of the orb source in this directory.
+This orb provides a basic utility to accomplish this.
 
-## @orb.yml
+In order for it to work, you must prefix the value of your environment variable with a configurable prefix (by default it is `UNMASKABLE:`).
 
-This is the entry point for our orb "tree", which becomes our `orb.yml` file later.
+For example, if your env var contains `FOO`, you'd need to update it to `UNMASKABLE:FOO`. This orb can then be used to strip the prefix and re-set the variable at run time, after which it can be viewed when printed. See [example](#example) for more.
 
-Within the `@orb.yml` we generally specify 4 configuration keys
+**Disclaimer:**
 
-**Keys**
+CircleCI Labs, including this repo, is a collection of solutions developed by members of CircleCI's field engineering teams through our engagement with various customer needs.
 
-1. **version**
-    Specify version 2.1 for orb-compatible configuration `version: 2.1`
-2. **description**
-    Give your orb a description. Shown within the CLI and orb registry
-3. **display**
-    Specify the `home_url` referencing documentation or product URL, and `source_url` linking to the orb's source repository.
-4. **orbs**
-    (optional) Some orbs may depend on other orbs. Import them here.
+-   ✅ Created by engineers @ CircleCI
+-   ✅ Used by real CircleCI customers
+-   ❌ **not** officially supported by CircleCI support
+
+## Example
+
+```yaml
+version: 2.1
+
+orbs:
+  unmask: circleci-labs/unmask@0.1.0
+
+jobs:
+  # If a project env var called MY_VAR is configured as "UNMASKABLE:FOO"
+  print-var:
+    docker:
+      - image: cimg/base:edge
+    steps:
+      - run: echo $MY_VAR # will try and print UNMASKABLE:FOO and show as *************
+      - unmask/setup:
+          variable: $MY_VAR
+          # Optionally set the prefix you want to use instead of UNMASKABLE: with e.g
+          # prefix: "ABCDE:"
+      - run: echo $MY_VAR # will print FOO
+
+workflows:
+  # ... etc
+```
 
 ## See:
  - [Orb Author Intro](https://circleci.com/docs/2.0/orb-author-intro/#section=configuration)
  - [Reusable Configuration](https://circleci.com/docs/2.0/reusing-config)
+ - [Secret Masking](https://circleci.com/docs/env-vars/#secrets-masking)
